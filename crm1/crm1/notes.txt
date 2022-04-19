@@ -1,0 +1,8 @@
+pip install django
+django-admin startprojeect crm1
+cd crm1
+(test) python manage.py runserver
+python manage.py startapp accounts
+add accounts to settings.py installed apps
+create urls.py in accounts folder - https://youtu.be/QvTyqta3OJo?list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO&t=348
+part 3 https://www.youtube.com/watch?v=9aEsZxaOwRs&list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO&index=3
