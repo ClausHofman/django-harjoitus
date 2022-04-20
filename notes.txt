@@ -1,0 +1,9 @@
+pip install django
+django-admin startprojeect crm1
+cd crm1
+(test) python manage.py runserver
+python manage.py startapp accounts
+add accounts to settings.py installed apps
+create urls.py in accounts folder
+create templates/accounts in the accounts folder and create dashboard.html
+in views.py modify home function to return render(request, 'accounts/dashboard.html')
