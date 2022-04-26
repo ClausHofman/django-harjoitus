@@ -1,14 +1,16 @@
 from django.shortcuts import render
-from django.http import HttpResponse #1
+from django.http import HttpResponse
 # Create your views here.
 from .models import *
 
 
-def home(request): #1
-    return render(request, 'accounts/dashboard.html') #2
+def home(request):
+    return render(request, 'accounts/dashboard.html')
 
-def products(request): #1
-    return render(request, 'accounts/products.html') #2
+def products(request):
+    products = Product.objects.all() # query database
 
-def customer(request): #1
-    return render(request, 'accounts/customer.html') #2
+    return render(request, 'accounts/products.html', {'products':products}) # pass products into template with dictionary
+
+def customer(request):
+    return render(request, 'accounts/customer.html')
