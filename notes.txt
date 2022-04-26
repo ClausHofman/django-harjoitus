@@ -7,3 +7,5 @@ add accounts to settings.py installed apps
 create urls.py in accounts folder
 create templates/accounts in the accounts folder and create dashboard.html
 in views.py modify home function to return render(request, 'accounts/dashboard.html')
+
+https://docs.djangoproject.com/en/4.0/ref/models/querysets/
