@@ -11,3 +11,28 @@ in views.py modify home function to return render(request, 'accounts/dashboard.h
 https://docs.djangoproject.com/en/4.0/ref/models/querysets/
 
 database model queries, python manage.py shell, from accounts.models import *
+customer1 = Customer.objects.get(name="Jaska Jokunen")
+print (customer1.email)
+print (customer1.id)
+
+get customer's orders (without filter method)
+orders = customer1.oder_set.all()
+print(orders)
+
+who placed the first order
+order = Order.objects.first()
+print(order.customer.name) (from the customer model)
+
+products = Product.objects.filter()
+print(products)
+
+use filter (can have many values)
+products = Product.objects.filter(category="Out Door")
+print(products)
+
+sort products (by id)
+products = Product.objects.all().order_by('id')
+products = Product.objects.all().order_by('-id') (reverse order)
+
+products = Product.objects.filter(tags__name="Sports") # double underscore because manytomany relationship
+print(products)
