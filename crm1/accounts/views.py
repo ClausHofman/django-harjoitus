@@ -5,6 +5,13 @@ from .models import *
 
 
 def home(request):
+    # query orders and customers
+    orders = Order.objects.all()
+    customers = Customer.objects.all()
+
+    # create dictionary
+    context = {'orders':orders, 'customers':customers}
+
     return render(request, 'accounts/dashboard.html')
 
 def products(request):
