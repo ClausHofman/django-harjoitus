@@ -19,8 +19,8 @@
         <div class="card card-body">
             <h5>Contact Information</h5>
             <hr>
-            <p>Email: </p>
-            <p>Phone:</p>
+            <p>Email: {{customer.email}} </p>
+            <p>Phone: {{customer.phone}}</p>
         </div>
     </div>
 
@@ -28,7 +28,7 @@
         <div class="card card-body">
             <h5>Total Orders</h5>
             <hr>
-            <h1 style="text-align: center;padding: 10px"></h1>
+            <h1 style="text-align: center;padding: 10px">{{order_count}}</h1>
         </div>
     </div>
 </div>
@@ -53,17 +53,26 @@
         <div class="card card-body">
             <table class=""table table-sm">
                 <tr>
-                    <th>Product</th>
-                    <th>Category</th>
-                    <th>Date Ordered</th>
-                    <th>Status</th>
-                    <th>Update</th>
-                    <th>Remove</th>
+                    <th>Product<hr></th>
+                    <th>Category<hr></th>
+                    <th>Date Ordered<hr></th>
+                    <th>Status<hr></th>
+                    <th>Update<hr></th>
+                    <th>Remove<hr></th>
                 </tr>
 
+                {% for order in orders %}
+                <tr>
+                    <td>{{order.product}}</td> <!-- check names from models.py -->
+                    <td>{{order.product.category}}</td>
+                    <td>{{order.date_created}}</td>
+                    <td>{{order.status}}</td>
+                    <td><a class="btn btn-sm btn-info" href="">Update</a></td>
+                    <td><a class="btn btn-sm btn-danger"href="">Update</a></td>
+                </tr>
+                {% endfor %}
             </table>
         </div>
     </div>
 </div>
-
 {% endblock %}
