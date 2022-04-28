@@ -28,5 +28,10 @@ def products(request):
 
     return render(request, 'accounts/products.html', {'products':products}) # pass products into template with dictionary
 
-def customer(request):
-    return render(request, 'accounts/customer.html')
+def customer(request, pk_test): # add pk parameter (primary key), create dynamic view
+    # query customer
+    customer = Customer.objects.get(id=pk_test)
+
+    context = {'customer':customer}
+
+    return render(request, 'accounts/customer.html', context)
