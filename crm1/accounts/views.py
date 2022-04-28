@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
 from .models import *
+from .forms import OrderForm
 
 
 def home(request):
@@ -41,6 +42,7 @@ def customer(request, pk_test): # add pk parameter (primary key), create dynamic
 
 def createOrder(request):
 
-    context = {}
+    form = OrderForm() # form note
 
+    context = {'form':form}
     return render(request, 'accounts/order_form.html', context)
