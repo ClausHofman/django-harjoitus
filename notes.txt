@@ -37,4 +37,5 @@ products = Product.objects.all().order_by('-id') (reverse order)
 products = Product.objects.filter(tags__name="Sports") # double underscore because manytomany relationship
 print(products)
 
-pt8 2 38
+https://docs.djangoproject.com/en/4.0/topics/
+https://docs.djangoproject.com/en/4.0/topics/http/urls/
