@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 # Create your views here.
 from .models import *
@@ -43,6 +43,14 @@ def customer(request, pk_test): # add pk parameter (primary key), create dynamic
 def createOrder(request):
 
     form = OrderForm() # form note
+    if request.method == 'POST':
+        # print('Printing post:', request.POST)
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
 
     context = {'form':form}
     return render(request, 'accounts/order_form.html', context)
+
+    def updateOrder
