@@ -9,8 +9,17 @@ def home(request):
     orders = Order.objects.all()
     customers = Customer.objects.all()
 
+    # count customers and orders
+    total_customers = customers.count()
+    total_orders = orders.count() # reference line 9
+
+    delivered = orders.filter(status='Delivered').count() # filter and count orders with 'Delivered' status
+    pending = orders.filter(status='Pending').count() # filter and count pending orders
+
     # create dictionary
-    context = {'orders':orders, 'customers':customers}
+    context = {'orders':orders, 'customers':customers, 
+    'total_orders':total_orders, 'delivered':delivered,
+    'pending':pending}
 
     return render(request, 'accounts/dashboard.html', context)
 
