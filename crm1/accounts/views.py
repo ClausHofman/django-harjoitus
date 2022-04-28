@@ -12,7 +12,7 @@ def home(request):
     # create dictionary
     context = {'orders':orders, 'customers':customers}
 
-    return render(request, 'accounts/dashboard.html')
+    return render(request, 'accounts/dashboard.html', context)
 
 def products(request):
     products = Product.objects.all() # query database
