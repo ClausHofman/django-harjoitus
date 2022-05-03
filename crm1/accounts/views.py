@@ -40,8 +40,8 @@ def customer(request, pk_test): # add pk parameter (primary key), create dynamic
 
     return render(request, 'accounts/customer.html', context)
 
-def createOrder(request):
-
+def createOrder(request, pk):
+    customer = Customer.objects.get(id=pk)
     form = OrderForm() # form note
     if request.method == 'POST':
         # print('Printing post:', request.POST)
