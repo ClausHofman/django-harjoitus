@@ -41,3 +41,6 @@ https://docs.djangoproject.com/en/4.0/topics/
 https://docs.djangoproject.com/en/4.0/topics/http/urls/
 
 11, 4 00
+
+pip install django-filter
+installed apps 'django_filters
