@@ -42,9 +42,9 @@ def customer(request, pk_test): # add pk parameter (primary key), create dynamic
     return render(request, 'accounts/customer.html', context)
 
 def createOrder(request, pk):
-    OrderFormSet = inlineformset_factory(Customer, Order, fields=('product', 'status')) # Parent model, child model, references from order to customer, what fields to allow. Comment out form
+    OrderFormSet = inlineformset_factory(Customer, Order, fields=('product', 'status'), extra=5) # Parent model, child model, references from order to customer, what fields to allow. Comment out form
     customer = Customer.objects.get(id=pk)
-    formset = OrderFormSet(instance=customer)
+    formset = OrderFormSet(queryset=Order.objects.none(), instance=customer)
     # form = OrderForm(initial={'customer':customer}) # form note
     if request.method == 'POST':
         # print('Printing post:', request.POST)
