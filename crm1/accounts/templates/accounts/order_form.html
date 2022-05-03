@@ -11,8 +11,8 @@
                 {% csrf_token %}
                 {{ formset.management_form }}
                 {% for form in formset %}
-                {{form}} <!-- name has to be same as in views.py (form note) -->
-                <hr>
+                    {{form}}
+                    <hr>
                 {% endfor %}
 
                 <input type="submit" name="Submit">
