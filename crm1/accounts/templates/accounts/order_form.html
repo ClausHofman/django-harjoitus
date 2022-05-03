@@ -9,7 +9,7 @@
                         
             <form action="" method="POST">
                 {% csrf_token %}
-                {{form}} <!-- name has to be same as in views.py (form note) -->
+                {{formset}} <!-- name has to be same as in views.py (form note) -->
 
                 <input type="submit" name="Submit">
             </form>
